@@ -1,3 +1,4 @@
+
 import pika
 
 
@@ -20,8 +21,6 @@ channel.queue_bind("my.queue1", "ex.fanout", "")
 channel.queue_bind("my.queue2", "ex.fanout", "")
 
 #publishing message to the exchange
-channel.basic_publish("ex.fanout","",b"hello World!")
-channel.basic_publish("ex.fanout","",b"hello World two!")
 print("Connection is ready [ send end to quit ]")
 msg = ""
 while msg != "end":
@@ -42,3 +41,5 @@ connection.close();
 
 #checking if all works.
 print("Deleted all messages")
+
+
